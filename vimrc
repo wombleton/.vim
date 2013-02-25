@@ -21,8 +21,8 @@ set nowritebackup
 set noswapfile
 
 " Spaces not tabs
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 " Remove trailing whitespace whenever saving files
@@ -78,3 +78,7 @@ function! AppendModeline()
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " vim: set ts=2 sw=2 tw=78 filetype=vim :
+set vb t_vb=
+
+autocmd FileType tmpl setlocal shiftwidth=4 tabstop=4
+autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
