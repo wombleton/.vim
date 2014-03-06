@@ -67,3 +67,9 @@
 [submodule "submodule/yaml"]
 	path = submodule/yaml
 	url = https://github.com/ingydotnet/yaml-vim.git
+[submodule "submodule/zencoding-vim"]
+	path = submodule/zencoding-vim
+	url = https://github.com/mattn/zencoding-vim.git
+[submodule "submodule/mustache-handlebars"]
+	path = submodule/mustache-handlebars
+	url = git://github.com/mustache/vim-mustache-handlebars.git

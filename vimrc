@@ -4,6 +4,13 @@ filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
+" change the mapleader from \ to ,
+let mapleader = ","
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>rv :so $MYVIMRC<CR>
+
 filetype plugin on
 filetype indent on
 
@@ -21,13 +28,19 @@ set nowritebackup
 set noswapfile
 
 " Spaces not tabs
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Remove trailing whitespace whenever saving files
 if has("autocmd")
-  au BufWritePre * :%s/\s\+$//e
+  au BufWritePre *.rb :%s/\s\+$//e
+  au BufWritePre *.js :%s/\s\+$//e
+  au BufWritePre *.coffee :%s/\s\+$//e
+  au BufWritePre *.java :%s/\s\+$//e
+  au BufWritePre *.css :%s/\s\+$//e
+  au BufWritePre *.scss :%s/\s\+$//e
+  au BufWritePre *.less :%s/\s\+$//e
 endif
 
 " Incremental search
@@ -80,5 +93,26 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " vim: set ts=2 sw=2 tw=78 filetype=vim :
 set vb t_vb=
 
+au BufNewFile,BufRead *.ejs set filetype=html
+
 autocmd FileType tmpl setlocal shiftwidth=4 tabstop=4
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+
+" buffer
+nmap <leader>n<left>   :leftabove  vnew<CR>
+nmap <leader>n<right>  :rightbelow vnew<CR>
+nmap <leader>n<up>     :leftabove  new<CR>
+nmap <leader>n<down>   :rightbelow new<CR>
+
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+
+nmap <C-P> :CtrlP<CR>
+nmap <C-O> :CtrlPClearCache<CR>
+nmap <C-B> :CtrlPMRU<CR>
