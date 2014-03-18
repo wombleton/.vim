@@ -13,9 +13,6 @@
 [submodule "submodule/json"]
 	path = submodule/json
 	url = https://github.com/vim-scripts/JSON.vim.git
-[submodule "submodule/coffee-script"]
-	path = submodule/coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "submodule/git"]
 	path = submodule/git
 	url = https://github.com/tpope/vim-git.git
@@ -76,3 +73,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+[submodule "bundle/coffee-script"]
+	path = bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
